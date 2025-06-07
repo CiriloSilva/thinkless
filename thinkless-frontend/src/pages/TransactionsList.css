@@ -1,0 +1,89 @@
+.tx-container{
+  max-width:1180px;
+  margin:40px auto;
+  padding:0 24px
+}
+.title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px
+}
+.back-btn{
+  background:#064e10;
+  color:#fff;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px
+}
+.month-section{
+  margin-bottom:40px
+}
+.sub-head{
+  display:flex;
+  justify-content:space-between;/* empurra ícone p/ direita */
+  align-items:center;
+  margin-bottom:8px;
+}
+.sort-icon{
+  background:none;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  line-height:1;
+  margin-left:auto;/* reforça alinhamento extremo */
+}
+
+.tx-container h2.futuras{
+  margin-top:32px;
+  margin-bottom:16px
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid #ddd;
+  table-layout:fixed
+}
+th,td{
+  padding:10px 12px;
+  border-bottom:1px solid #eee;
+  text-align:left;
+  font-size:15px
+}
+thead th{
+  background:#f7f7f7;
+  font-weight:600
+}
+tr:last-child td{
+  border-bottom:none
+}
+.w70{
+  width:70%
+}.w30{
+  width:30%
+}
+
+/* header/footer reaproveitados */
+.dash-header,.app-footer{
+  background:#fff;
+  box-shadow:0 2px 4px rgba(0,0,0,.08)
+}
+.dash-header>.wrap,.app-footer>.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+  height:72px;
+  display:flex;
+  align-items:center
+}
+.logo{
+  font-weight:700;
+  font-size:24px;
+  display:flex;
+  align-items:center;
+  gap:8px
+}

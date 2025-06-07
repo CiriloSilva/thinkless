@@ -1,0 +1,179 @@
+/* ---------------------------------------------------
+   LAYOUT GERAL
+---------------------------------------------------*/
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',sans-serif;
+  background:#f0f0f0;
+}
+
+.dash-header, .app-footer{
+  background:#fff;
+  box-shadow:0 2px 4px rgba(0,0,0,.08);
+}
+.dash-header>.wrap,
+.app-footer>.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{font-weight:700;font-size:24px;display:flex;align-items:center;gap:8px}
+.icons{font-size:20px;display:flex;gap:14px}
+
+.dash-container{
+  max-width:1180px;
+  margin:32px auto 64px;
+  padding:0 24px;
+}
+
+/* ---------------------------------------------------
+   WELCOME CARD  (cumprimento + acesso rápido)
+---------------------------------------------------*/
+.welcome-card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:24px 28px;
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+  margin-bottom:32px;
+}
+
+/* coluna esquerda (saudação + mini-stats) */
+.welcome-card > div:first-child{flex:1}
+.welcome-card .small{font-size:14px;margin:0;color:#555}
+.welcome-card h2{margin:2px 0 18px}
+
+/* mini-cards receita / despesa / relatórios */
+.mini-stats{display:flex;gap:12px;flex-wrap:wrap}
+.mini-btn{
+  background:#e0e0e0;border:0;border-radius:4px;
+  padding:10px 14px;
+  min-width:150px;
+  display:flex;                         /* << centro vertical              */
+  flex-direction:column;
+  justify-content:center;               /* centraliza texto verticalmente  */
+  text-align:center;                    /* centraliza horizontalmente      */
+  cursor:default;
+}
+.mini-btn span{font-size:14px;color:#666}
+.mini-btn strong{display:block;font-size:24px;font-weight:700;margin-top:2px}
+.mini-btn.dark{background:#222;color:#fff;cursor:pointer}
+
+/* coluna direita (acesso rápido) */
+.quick-block{
+  flex:1;                         /* ocupa todo o espaço restante   */
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;         /* cabeçalho e ícones à esquerda  */
+  padding-left:40px;              /* respiro após a linha vertical  */
+  border-left:2px solid #ccc;
+}
+
+.quick-block h4{
+  margin:0 0 14px;               /* distância entre título e ícones*/
+  font-size:18px;
+  font-weight:700;
+}
+
+.quick-access{
+  display:flex;
+  margin-top: 40px;
+  gap:40px;                      /* espaço uniforme entre ícones   */
+  flex-wrap:wrap;                /* quebra em telas estreitas      */
+}
+
+.quick-item{display:flex;flex-direction:column;align-items:center;cursor:pointer;font-size:13px}
+.circle{
+  width:44px;height:44px;border:2px solid currentColor;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;
+  transition:background .2s,color .2s
+}
+.quick-item:hover .circle{background:currentColor;color:#fff}
+
+/* ---------------------------------------------------
+   SEÇÃO PRINCIPAL – cards em layout masonry 2 col.
+---------------------------------------------------*/
+.grid-two{
+  column-count:2;
+  column-gap:32px;
+}
+.grid-two>.card{
+  break-inside:avoid;
+  margin-bottom:32px;
+}
+@media(max-width:700px){
+  .grid-two{column-count:1;}
+}
+
+/* card genérico */
+.card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:18px 20px 24px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+.card h3{margin:0 0 14px;font-size:17px;font-weight:700}
+
+/* título com botão de ordenação ▲▼ */
+.card-title{display:flex;align-items:center;gap:8px}
+.sort-btn{
+  background:none;border:none;font-size:18px;cursor:pointer;line-height:1;margin-left:auto
+}
+
+/* ---------------------------------------------------
+   LISTAS (receitas, gastos, histórico)
+---------------------------------------------------*/
+.list{list-style:none;padding:0;margin:0}
+.list li{
+  display:flex;align-items:center;font-size:15px;
+  padding:8px 0;border-bottom:1px solid #f2f2f2
+}
+.list li:last-child{border-bottom:none}
+.dot{
+  display:inline-block;width:32px;height:32px;border-radius:50%;margin-right:12px;
+}
+.right{margin-left:auto}
+.list small{font-size:11px;color:#666;margin-left:4px}
+
+/* botão “Ver mais detalhes” */
+.link-btn{
+  margin-top:10px;padding:0;border:none;background:none;
+  color:#1260d4;cursor:pointer;font-size:14px
+}
+
+/* ---------------------------------------------------
+   METAS  (barra + texto)
+---------------------------------------------------*/
+.goal-row{
+  display:grid;
+  grid-template-columns:200px auto;      /* barra + texto */
+  grid-template-rows:auto auto;
+  column-gap:18px;row-gap:2px;
+  margin:18px 0;
+}
+.goal-row .bar{
+  grid-area:1 / 1 / 2 / 2;
+  width:100%;height:12px;border-radius:6px;background:#eee;position:relative
+}
+.goal-row .bar::after{
+  content:"";position:absolute;inset:0;background:var(--c);width:var(--pct);border-radius:6px
+}
+.goal-row .label{grid-area:1 / 2 / 2 / 3;font-weight:700}
+.goal-row .pct{
+  grid-area:2 / 1 / 3 / 2;
+  text-align:center;font-size:13px;margin-top:4px;font-weight:600;color:#333
+}
+.goal-row .value{grid-area:2 / 2 / 3 / 3;color:#666;font-size:13px}
+
+/* ---------------------------------------------------
+   AUTH pages → css próprio (Auth.css)
+---------------------------------------------------*/
+
