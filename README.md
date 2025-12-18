@@ -1,4 +1,4 @@
-# 🧠 ThinkLess
+# ThinkLess
 
 ThinkLess é um **Sistema de Controle de Despesas Pessoais** minimalista que ajuda você a entender para onde o seu dinheiro está indo sem complicação.  
 O projeto foi criado para fins acadêmicos.
