@@ -9,7 +9,7 @@ O projeto foi criado para fins acadêmicos.
 
 ---
 
-## ✨ Principais funcionalidades
+## Principais funcionalidades
 * Cadastro de receitas e despesas (CRUD)
 * Autenticação JWT
 * Dashboard com totalizadores, gráficos e filtros
