@@ -18,7 +18,7 @@ O projeto foi criado para fins acadêmicos.
 
 ---
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 
 | Ferramenta | Versão mínima |
 | ---------- | ------------- |
